@@ -1,5 +1,7 @@
 const scriptName = "핑퐁 챗봇";
 
+const Key = ""; // Key
+
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
   if (msg.startsWith("\"") && msg.endsWith("\"")) {
     try {
@@ -10,8 +12,8 @@ function response(room, msg, sender, isGroupChat, replier, imageDB, packageName)
         }
       };
       
-      var message = JSON.parse(org.jsoup.Jsoup.connect("https://builder.pingpong.us/api/builder/605b0e30e4b078d873a52a7d/integration/v0.2/custom/a2V5OjUzZWUzNjAxMzM3NmVjNzYwOGNkZTVmZjJlZWNiNWVk")
-    .header("Authorization", "Basic a2V5OjUzZWUzNjAxMzM3NmVjNzYwOGNkZTVmZjJlZWNiNWVk")
+      var message = JSON.parse(org.jsoup.Jsoup.connect("https://builder.pingpong.us/api/builder/605b0e30e4b078d873a52a7d/integration/v0.2/custom/"+Key)
+    .header("Authorization", "Basic "+Key)
     .header("Content-Type", "application/json; charset=utf-8")
     .requestBody(JSON.stringify(json))
     .ignoreContentType(true).ignoreHttpErrors(true).post().text());
